@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #0a101d;
+    overflow: hidden;
+    position: relative;
+}
+
+/* First Blob */
+body::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    background: #3b56b9;
+    border-radius: 50%;
+    filter: blur(200px);
+    top: 10%;
+    left: 20%;
+    animation: floatBlob1 18s ease-in-out infinite alternate;
+}
+
+/* Second Blob */
+body::after {
+    pointer-events: none;
+
+
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: #6c48b8;
+    border-radius: 50%;
+    filter: blur(160px);
+    bottom: 5%;
+    right: 15%;
+    animation: floatBlob2 22s ease-in-out infinite alternate;
+}
+
+@keyframes floatBlob1 {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    50% {
+        transform: translate(80px, 60px) scale(1.1);
+    }
+    100% {
+        transform: translate(-40px, 40px) scale(1);
+    }
+}
+
+@keyframes floatBlob2 {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    50% {
+        transform: translate(-60px, -50px) scale(1.15);
+    }
+    100% {
+        transform: translate(30px, -30px) scale(1);
+    }
+}
+
+
+@keyframes slowZoom {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(40px, 30px) scale(1.1);
+    }
+    100% {
+        transform: translate(-20px, 20px) scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+
+    animation: fadeUp 1.2s ease-out;
+}
+
+.welcome h1 {
+    font-size: 52px;
+    margin-bottom: 1rem;
+}
+
+.welcome p {
+    font-size: 22px;
+    max-width: 600px;
+    margin-bottom: 5rem;
+    opacity: 0.9;
+}
+
+.start-btn {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    transition: 0.3s ease, box-shadow 0.3s ease;
+}
+
+.start-btn:hover {
+    background: white;
+    color: black;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* mobile */
+@media (max-width: 600px) {
+    .welcome h1 {
+        font-size: 34px;
+    }
+
+    .welcome p {
+        font-size: 18px;
+    }
+}

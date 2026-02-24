@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Hobbies</title>
+
+        <link rel="stylesheet" href="myDrawings.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div class="title-wrapper">
+            <h1>My Hobbies</h1>
+        </div>
+        
+        <div class="page1-bg"></div>
+
+        <div class="gallery" id="gallery"></div>
+
+        <script>
+            const gallery = document.getElementById("gallery");
+
+            for (let i = 1; i <= 7; i++) {
+                const img = document.createElement("img");
+                img.src = "hobbies/d" + i + ".jpg";
+                img.alt = "Hobby " + i;
+
+                gallery.appendChild(img);
+            }
+        </script>
+
+        <div class="content">
+            <p><a href="about.html">Back</a></p>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>My Crochets</title>
+  <link rel="stylesheet" href="myDrawings.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <div class="title-wrapper">
+    <h1>My Crochets</h1>
+  </div>
+  
+  <div class="page1-bg"></div> 
+
+  <div class="gallery" id="gallery"></div>
+
+  <div class="content">
+        <p><a href="portfolio.html">Back</a></p>
+  </div>
+
+  <!-- Fullscreen image modal -->
+   <!--fullscreen overly (dark background), class is used by css to style it-->
+  <div id="lightbox" class="lightbox">   
+    <!--the x close button, &times is html for x-->
+    <span class="close">&times;</span>  
+     <!--prev pointer-->
+    <span class="nav prev">&#10094;</span> 
+     <!--the image that will appear fullscreen, the lightbox is hidden at first-->
+    <img class="lightbox-img" id="lightbox-img"> 
+    <!--next pointer-->
+    <span class="nav next">&#10095;</span> 
+  </div>
+
+  
+
+  <script>
+  const gallery = document.getElementById("gallery");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".close");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+
+  let currentIndex = 0;
+  const totalImages = 10;
+
+  // Create images
+  for (let i = 1; i <= totalImages; i++) {
+    const img = document.createElement("img");
+    img.src = "crochet/d" + i + ".jpeg";
+    img.alt = "Crochets " + i;
+
+    img.addEventListener("click", () => {
+      currentIndex = i;
+      openLightbox();
+    });
+
+    gallery.appendChild(img);
+  }
+
+  function openLightbox() {
+    lightbox.style.display = "flex";
+    lightboxImg.src = "crochet/d" + currentIndex + ".jpeg";
+  }
+
+  function showNext() {
+    currentIndex++;
+    if (currentIndex > totalImages) {
+      currentIndex = 1;
+    }
+    openLightbox();
+  }
+
+  function showPrev() {
+    currentIndex--;
+    if (currentIndex < 1) {
+      currentIndex = totalImages;
+    }
+    openLightbox();
+  }
+
+  nextBtn.addEventListener("click", showNext);
+  prevBtn.addEventListener("click", showPrev);
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #10182b;
+    overflow: hidden;
+    position: relative;
+}
+
+.content {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 40px;
+    line-height: 1.9;
+    font-size: 20px;
+    color: white;
+
+    background: rgba(0, 0, 0, 0.55); /* dark overlay */
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.content strong {
+    color: #a8b0ff;
+}
+
+
+.back {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+}
+
+.back a {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.back a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-3px);
+}
+
+/* remove the scroll bar */
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {  /* for phone */
+
+  h1 {
+        font-size: 26px;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    p {
+        margin: 0.5rem 0;
+        font-size: 18px;
+    }
+
+    .gallery {
+        gap: 16px;
+    }
+
+    .gallery img {
+        max-width: 160px;
+    }
+
+  .content {
+    margin-left: 2rem;     /* remove desktop offset */
+    margin-top: 10rem;
+    padding: 1.2rem;   /* safe spacing for phone */
+    max-width: 100%;
+    font-size: 22px;
+    text-align: left;
+  }
+
+  .page1-bg {
+    background-position: center top;
+    background-size: cover;
+  }
+
+  html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+}
+

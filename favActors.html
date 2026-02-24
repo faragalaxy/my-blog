@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fav Actors</title>
+
+        <link rel="stylesheet" href="myDrawings.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div class="title-wrapper">
+            <h1>Favorite Actors and Actresses</h1>
+        </div>
+        
+        <div class="page1-bg"></div>
+
+        <div class="gallery" id="gallery"></div>
+
+        <script>
+            const actors = [
+              { src: "actors/d1.jpg", name: "Norman Reedus" },
+              { src: "actors/d2.jpg", name: "Lauren Cohan" },
+              { src: "actors/d3.jpg", name: "Jeffrey Dean Morgan" },
+              { src: "actors/d4.jpg", name: "Jensen Ackles" },
+              { src: "actors/d5.jpg", name: "Jared Padalecki" },
+              { src: "actors/d6.jpg", name: "Hugh Jackman" },
+              { src: "actors/d7.jpg", name: "Shah Rukh Khan" },
+              { src: "actors/d8.jpg", name: "Akshay Kumar" },
+              { src: "actors/d9.jpg", name: "Deepika Padukone" },
+              { src: "actors/d10.jpg", name: "Andrew Garfield" },
+              { src: "actors/d11.jpg", name: "Priyanka Chopra" },
+              { src: "actors/d12.jpg", name: "Katrina Kaif" },
+              { src: "actors/d13.jpg", name: "Tom Hiddleston" },
+              { src: "actors/d14.jpg", name: "Gong Yoo" },
+            ];
+
+            actors.forEach(actor => {
+              const figure = document.createElement("figure");
+              const img = document.createElement("img");
+              const caption = document.createElement("figcaption");
+
+              img.src = actor.src;
+              caption.textContent = actor.name;
+
+              figure.appendChild(img);
+              figure.appendChild(caption);
+              gallery.appendChild(figure);
+           });
+        </script>
+
+        <div class="content">
+            <p><a href="about.html">Back</a></p>
+        </div>
+
+    </body>
+</html>
